@@ -13,13 +13,25 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
-      <h1>Psychology Support App</h1>
-      {user ? (
-        <InputForm user={user} />
-      ) : (
-        <Login onLogin={() => setUser(auth.currentUser)} />
-      )}
+    <div
+      style={{
+        backgroundImage: "url('/bg.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div className="App">
+        <h1>Psychology Support App</h1>
+        {user ? (
+          <InputForm user={user} />
+        ) : (
+          <Login onLogin={() => setUser(auth.currentUser)} />
+        )}
+      </div>
     </div>
   );
 };
